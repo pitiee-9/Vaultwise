@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Premium Button</title>
+  <style>
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px rgba(30, 60, 100, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(30, 60, 100, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 5px rgba(30, 60, 100, 0.6);
+      }
+    }
+    .premium-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: linear-gradient(145deg, #0a1f3a, #152c4f);
+      color: #e0e8f0;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      animation: glow 3s ease-in-out infinite;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .premium-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #122847, #1b3661);
+    }
+    .premium-btn:active {
+      transform: scale(0.97);
+    }
+    .premium-btn .icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.8));
+      transition: transform 0.3s ease;
+    }
+    .premium-btn:hover .icon {
+      transform: rotate(20deg) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+<button class="premium-btn">
+  <svg class="icon" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L14.09 8.26L20.91 8.91L15.45 12.9L17.36 19.64L12 16.2L6.64 19.64L8.55 12.9L3.09 8.91L9.91 8.26L12 2Z"/>
+  </svg>
+  Explore Premium
+</button>
+
+</body>
+</html>

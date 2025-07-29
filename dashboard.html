@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultwise-Financial Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <span class="logo-text">Vaultwise</span>
+            </a>
+            <button class="toggle-btn" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <button class="premium-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.09 8.26L20.91 8.91L15.45 12.9L17.36 19.64L12 16.2L6.64 19.64L8.55 12.9L3.09 8.91L9.91 8.26L12 2Z"/>
+            </svg>
+            Explore Premium
+        </button>
+        
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item active">
+                <i class="fas fa-home menu-icon"></i>
+                <span class="menu-text">Dashboard</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-exchange-alt menu-icon"></i>
+                <span class="menu-text">Buy & Sell</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-code menu-icon"></i>
+                <span class="menu-text">Development</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-briefcase menu-icon"></i>
+                <span class="menu-text">Work</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-chart-pie menu-icon"></i>
+                <span class="menu-text">Portfolio</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-book menu-icon"></i>
+                <span class="menu-text">Docs</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-wallet menu-icon"></i>
+                <span class="menu-text">Budgeting</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-file-invoice-dollar menu-icon"></i>
+                <span class="menu-text">Transactions</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-robot menu-icon"></i>
+                <span class="menu-text">AI Insights</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-cog menu-icon"></i>
+                <span class="menu-text">Settings</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            
+            <div class="header-actions">
+                <div class="header-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                
+                <div class="header-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                
+                <div class="user-profile">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-info">
+                        <div class="user-name">John Doe</div>
+                        <div class="user-role">Premium Member</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <h1 class="dashboard-title">
+                <i class="fas fa-chart-line" style="color: var(--accent);"></i>
+                Financial Dashboard
+            </h1>
+            <p class="dashboard-subtitle">
+                Monitor your finances, track spending, and get AI-powered insights to optimize your budget
+            </p>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">Total Balance</div>
+                    <div class="stat-value">$24,589.75</div>
+                    <div class="stat-change change-up">
+                        <i class="fas fa-arrow-up"></i>
+                        12.5% since last month
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-title">Monthly Income</div>
+                    <div class="stat-value">$5,280.00</div>
+                    <div class="stat-change change-up">
+                        <i class="fas fa-arrow-up"></i>
+                        8.3% since last month
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-money-check"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-title">Monthly Expenses</div>
+                    <div class="stat-value">$3,845.60</div>
+                    <div class="stat-change change-down">
+                        <i class="fas fa-arrow-down"></i>
+                        4.2% since last month
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-title">Investment Value</div>
+                    <div class="stat-value">$15,780.45</div>
+                    <div class="stat-change change-up">
+                        <i class="fas fa-arrow-up"></i>
+                        5.7% since last month
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Row -->
+            <div class="charts-row">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div class="chart-title">Spending Analysis</div>
+                        <div class="chart-actions">
+                            <button class="chart-action-btn">Month</button>
+                            <button class="chart-action-btn">Quarter</button>
+                            <button class="chart-action-btn">Year</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="spendingChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <div class="chart-title">Budget Allocation</div>
+                        <div class="chart-actions">
+                            <button class="chart-action-btn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Insights -->
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="insight-title">Savings Opportunity</div>
+                    </div>
+                    <div class="insight-content">
+                        Our AI detected that you're spending 28% more on dining out compared to last month. 
+                        Consider reducing restaurant visits by 2 per week to save approximately $120 monthly.
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="insight-title">Investment Tip</div>
+                    </div>
+                    <div class="insight-content">
+                        Based on your risk profile, we recommend allocating 15% of your portfolio to emerging market ETFs. 
+                        Historical data shows an average 8.2% annual return for similar portfolios.
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="insight-title">Security Alert</div>
+                    </div>
+                    <div class="insight-content">
+                        Unusual activity detected in your entertainment category. 
+                        Verify recent transactions totaling $348.50. 
+                        <a href="#" style="color: var(--accent);">Review now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <div class="activity-header">
+                    <div class="activity-title">Recent Transactions</div>
+                    <button class="chart-action-btn">View All</button>
+                </div>
+                
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-desc">Amazon Online Purchase</div>
+                            <div class="activity-time">Today, 10:24 AM</div>
+                        </div>
+                        <div class="activity-amount change-down">-$89.99</div>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-desc">Monthly Mortgage Payment</div>
+                            <div class="activity-time">Yesterday, 2:15 PM</div>
+                        </div>
+                        <div class="activity-amount change-down">-$1,250.00</div>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-money-check"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-desc">Salary Deposit - Company Inc</div>
+                            <div class="activity-time">May 30, 9:00 AM</div>
+                        </div>
+                        <div class="activity-amount change-up">+$4,850.00</div>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-desc">Starbucks Coffee</div>
+                            <div class="activity-time">May 29, 8:45 AM</div>
+                        </div>
+                        <div class="activity-amount change-down">-$5.75</div>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-desc">Stock Dividend - AAPL</div>
+                            <div class="activity-time">May 28, 3:30 PM</div>
+                        </div>
+                        <div class="activity-amount change-up">+$42.60</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

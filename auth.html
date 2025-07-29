@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptgo - Financial Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <span>Cryptgo</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-container">
+        <!-- Sign Up Form (default) -->
+        <div class="auth-card" id="signup-form">
+            <div class="crypto-animation">
+                <i class="fab fa-bitcoin crypto-icon"></i>
+                <i class="fab fa-ethereum crypto-icon"></i>
+                <i class="fas fa-coins crypto-icon"></i>
+                <i class="fab fa-monero crypto-icon"></i>
+            </div>
+            
+            <h2 class="auth-title">Create Your Account</h2>
+            
+            <div class="social-auth">
+                <button class="social-btn google-btn">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="social-btn apple-btn">
+                    <i class="fab fa-apple"></i> Continue with Apple
+                </button>
+            </div>
+            
+            <div class="divider">
+                <div class="divider-text">or sign up with email</div>
+            </div>
+            
+            <form id="signupForm">
+                <div class="name-group">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input" placeholder="Doe" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Country</label>
+                    <select class="form-input" required>
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Zip Code</label>
+                    <input type="text" class="form-input" placeholder="12345" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Birth Date</label>
+                    <input type="date" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email or Telephone</label>
+                    <input type="text" class="form-input" placeholder="email@example.com or +1234567890" required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" class="checkbox-input" required>
+                    <label for="terms" class="checkbox-label">
+                        I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <div class="recaptcha-placeholder">
+                    <i class="fas fa-robot"></i> Prove you're not a robot
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                Already have an account? <button class="toggle-btn" onclick="showSignIn()">Sign In</button>
+            </div>
+        </div>
+        
+        <!-- Sign In Form (hidden by default) -->
+        <div class="auth-card switch-form" id="signin-form">
+            <div class="crypto-animation">
+                <i class="fab fa-bitcoin crypto-icon"></i>
+                <i class="fab fa-ethereum crypto-icon"></i>
+                <i class="fas fa-coins crypto-icon"></i>
+                <i class="fab fa-monero crypto-icon"></i>
+            </div>
+            
+            <h2 class="auth-title">Welcome Back</h2>
+            
+            <form id="signinForm">
+                <div class="form-group">
+                    <label class="form-label">Email or Telephone</label>
+                    <input type="text" class="form-input" placeholder="email@example.com or +1234567890" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••" required>
+                    <div style="text-align: right; margin-top: 8px;">
+                        <a href="#" style="color: var(--primary); font-size: 0.9rem; text-decoration: none;">Forgot Password?</a>
+                    </div>
+                </div>
+                
+                <div class="recaptcha-placeholder">
+                    <i class="fas fa-robot"></i> Prove you're not a robot
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+            
+            <div class="divider" style="margin: 25px 0;">
+                <div class="divider-text">or sign in with</div>
+            </div>
+            
+            <div class="social-auth">
+                <button class="social-btn google-btn">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="social-btn apple-btn">
+                    <i class="fab fa-apple"></i> Continue with Apple
+                </button>
+            </div>
+            
+            <div class="auth-footer">
+                Don't have an account? <button class="toggle-btn" onclick="showSignUp()">Sign Up</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Cryptgo</h3>
+                    <p style="color: var(--gray); margin-bottom: 20px;">
+                        AI-powered financial planning for the modern world.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Buy & Sell</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Work</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Upgrade</a></li>
+                        <li><a href="#">Docs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclosures</a></li>
+                        <li><a href="#">Latest News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Subscribe</h3>
+                    <p style="color: var(--gray);">
+                        Get financial insights and updates
+                    </p>
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <input type="email" placeholder="Your email" style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); color: white;">
+                        <button style="padding: 10px 15px; border-radius: 8px; background: var(--primary); color: white; border: none; cursor: pointer;">Go</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>2025 Copyright | Cryptgo</div>
+                <div>Distributed by ThemeWagon</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
