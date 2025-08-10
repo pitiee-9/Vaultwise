@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultWise - Payment Methods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <link rel="stylesheet" href="assets/css/card.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <aside class="sidebar">
+            <div class="left">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='40' height='40'%3E%3Cpath fill='%23ffffff' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-13.5v9l-6-4.5 6-4.5z'/%3E%3C/svg%3E" alt="VaultWise Logo">
+              <button>
+                <i class="ai-home-alt1"></i>
+              </button>
+              <button>
+                <i class="ai-heart"></i>
+              </button>
+              <button>
+                <i class="ai-mention"></i>
+              </button>
+      
+              <button>
+                <i class="ai-chat-dots"></i>
+              </button>
+              <button>
+                <i class="ai-plus"></i>
+              </button>
+              <div>
+                <button>
+                  <i class="ai-gear"></i>
+                </button>
+                <button>
+                  <i class="ai-link-out"></i>
+                </button>
+              </div>
+            </div>
+            <div class="right">
+              <div class="right-inner">
+                <div class="header">
+                  <div>
+                    <h2>VaultWise</h2>
+                    <h3>Financial Security</h3>
+                  </div>
+                  <i class="ai-chevron-vertical"></i>
+                </div>
+                <nav>
+                  <button>
+                    <i class="ai-dashboard"></i>
+                    <span>Dashboard</span>
+                  </button>
+                  <button>
+                    <i class="ai-shipping-box-v1"></i>
+                    <span>Accounts</span>
+                  </button>
+                  <button>
+                    <i class="ai-person"></i>
+                    <span>Profile</span>
+                  </button>
+                  <button>
+                    <i class="ai-open-envelope"></i>
+                    <span>Messages</span>
+                    <i class="ai-plus"></i>
+                  </button>
+                  <ul class="submenu">
+                    <li>
+                      Notifications
+                      <span class="badge"> 3 </span>
+                    </li>
+                    <li>
+                      Transactions
+                      <span class="badge"> 12 </span>
+                    </li>
+                    <li>
+                      Security
+                    </li>
+                  </ul>
+                  <button>
+                    <i class="ai-image"></i>
+                    <span>Documents</span>
+                  </button>
+                  <button>
+                    <i class="ai-network"></i>
+                    <span>Network</span>
+                  </button>
+                  <button>
+                    <i class="ai-data"></i>
+                    <span>Reports</span>
+                  </button>
+                </nav>
+              </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Menu Toggle (Mobile) -->
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div></div> <!-- Empty div for spacing -->
+            
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <div class="user-name">John Doe</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Linking Content -->
+        <div class="card-linking-content">
+            <div class="card-linking-container">
+                <div class="card-form-section">
+                    <h2 class="section-title">Link Payment Method</h2>
+                    <p class="section-subtitle">Securely connect your preferred payment method</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <div class="payment-method-icon">
+                                <i class="fab fa-cc-visa"></i>
+                            </div>
+                            <div class="payment-method-name">Card</div>
+                        </div>
+                        
+                        <div class="payment-method" data-method="bank">
+                            <div class="payment-method-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="payment-method-name">Bank</div>
+                        </div>
+                        
+                        <div class="payment-method" data-method="paypal">
+                            <div class="payment-method-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <div class="payment-method-name">PayPal</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Payment Form -->
+                    <div class="payment-form-section active" id="cardFormSection">
+                        <form id="cardForm">
+                            <div class="form-group">
+                                <label class="form-label">Cardholder Name</label>
+                                <input type="text" class="form-input" placeholder="John Doe" id="cardName">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Card Number</label>
+                                <input type="text" class="form-input" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Expiration Date</label>
+                                    <input type="text" class="form-input" placeholder="MM/YY" id="cardExpiry">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-input" placeholder="123" id="cardCvv" maxlength="3">
+                                </div>
+                            </div>
+                            
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="security-text">
+                                    Your card details are encrypted and securely stored. We never share your financial information with third parties.
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary pulse" id="linkCardBtn">
+                                <i class="fas fa-lock"></i> Securely Link Card
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Bank Payment Form -->
+                    <div class="payment-form-section" id="bankFormSection">
+                        <form id="bankForm">
+                            <div class="form-group">
+                                <label class="form-label">Bank Name</label>
+                                <select class="form-input" id="bankName">
+                                    <option value="">Select your bank</option>
+                                    <option value="chase">Chase Bank</option>
+                                    <option value="boa">Bank of America</option>
+                                    <option value="wells">Wells Fargo</option>
+                                    <option value="citi">Citibank</option>
+                                    <option value="other">Other Bank</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Account Holder Name</label>
+                                <input type="text" class="form-input" placeholder="John Doe" id="accountName">
+                            </div>
+                            
+                            <div class="bank-form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Routing Number</label>
+                                    <input type="text" class="form-input" placeholder="123456789" id="routingNumber" maxlength="9">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Account Number</label>
+                                    <input type="text" class="form-input" placeholder="0123456789" id="accountNumber" maxlength="17">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Account Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="accountType" value="checking" checked>
+                                        Checking
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="accountType" value="savings">
+                                        Savings
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="security-text">
+                                    Your banking details are protected with bank-level security. We use 256-bit encryption to safeguard your information.
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary pulse" id="linkBankBtn">
+                                <i class="fas fa-lock"></i> Securely Link Bank Account
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- PayPal Payment Form -->
+                    <div class="payment-form-section" id="paypalFormSection">
+                        <form id="paypalForm">
+                            <div class="security-info" style="margin-bottom: 25px;">
+                                <div class="security-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="security-text">
+                                    You'll be securely redirected to PayPal to authorize the connection. We never see or store your PayPal password.
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">PayPal Email Address</label>
+                                <input type="email" class="form-input" placeholder="your.email@example.com" id="paypalEmail">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Connection Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="connectionType" value="express" checked>
+                                        Express Checkout
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="connectionType" value="billing">
+                                        Billing Agreement
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-info">
+                                <div class="security-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="security-text">
+                                    This connection allows VaultWise to securely process payments through PayPal. You can revoke access anytime from your PayPal account.
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary pulse paypal-btn" id="linkPayPalBtn">
+                                <i class="fab fa-paypal"></i> Connect with PayPal
+                            </button>
+                            
+                            <div style="text-align: center; margin-top: 20px; color: var(--gray); font-size: 0.9rem;">
+                                By connecting, you agree to the <a href="#" style="color: var(--accent);">PayPal User Agreement</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card-preview">
+                    <!-- Card Visual -->
+                    <div class="card-visual" id="cardVisual">
+                        <div class="card-front">
+                            <div class="card-chip"></div>
+                            <div class="card-number" id="previewCardNumber">#### #### #### ####</div>
+                            <div class="card-details">
+                                <div class="card-holder" id="previewCardName">CARDHOLDER NAME</div>
+                                <div class="card-expiry" id="previewCardExpiry">MM/YY</div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-strip"></div>
+                            <div class="card-cvv" id="previewCardCvv">***</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bank Visual -->
+                    <div class="bank-visual" id="bankVisual">
+                        <div class="bank-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="bank-details">
+                            <div class="bank-name" id="previewBankName">YOUR BANK</div>
+                            <div class="account-number" id="previewAccountNumber">•••• •••• ••••</div>
+                        </div>
+                        <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                            <div>Routing: •••••••••</div>
+                            <div>Account Type: Checking</div>
+                        </div>
+                    </div>
+                    
+                    <!-- PayPal Visual -->
+                    <div class="paypal-visual" id="paypalVisual">
+                        <div class="paypal-logo">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <div class="paypal-email" id="previewPaypalEmail">your.email@example.com</div>
+                        <div style="margin-top: 20px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8);">
+                            Express Checkout Enabled
+                        </div>
+                    </div>
+                    
+                    <button class="flip-button" id="flipCardBtn">
+                        <i class="fas fa-sync"></i> Flip Card
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>VaultWise</h3>
+                    <p style="color: var(--gray); margin-bottom: 20px;">
+                        AI-powered financial planning for the modern world.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Budgeting</a></li>
+                        <li><a href="#">Investment</a></li>
+                        <li><a href="#">Card Linking</a></li>
+                        <li><a href="#">AI Insights</a></li>
+                        <li><a href="#">Premium Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>2023 VaultWise Financial Technologies Inc.</div>
+                <div>
+                    <span>FDIC Insured • PCI DSS Compliant</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/card.js"></script>
+</body>
+</html>

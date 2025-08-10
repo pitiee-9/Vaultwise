@@ -11,7 +11,7 @@ africastalking.initialize(username, api_key)
 sms = africastalking.SMS
 
 # Define your message and recipients
-recipients = ["+250726661885"]  # use your test or real phone number
+recipients = ["+250794874910"]  # use your test or real phone number
 message = "Hello from Vaultwise using Africa's Talking!"
 
 # Send the SMS

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultWise - Link Payment Method</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="assets/css/card.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo">
+                <i class="fas fa-vault logo-icon"></i>
+                <span>VaultWise</span>
+            </a>
+            <button class="toggle-btn" id="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item">
+                <i class="fas fa-home menu-icon"></i>
+                <span>Home</span>
+            </a>
+            
+            <a href="#" class="menu-item active">
+                <i class="fas fa-wallet menu-icon"></i>
+                <span>Link Card</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-chart-pie menu-icon"></i>
+                <span>Budget</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-cog menu-icon"></i>
+                <span>Settings</span>
+            </a>
+            
+            <a href="#" class="menu-item">
+                <i class="fas fa-sign-out-alt menu-icon"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Menu Toggle (Mobile) -->
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div></div> <!-- Empty div for spacing -->
+            
+            <div class="user-profile">
+                <div class="user-avatar">JD</div>
+                <div class="user-info">
+                    <div class="user-name">John Doe</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card Linking Content -->
+        <div class="card-linking-content">
+            <div class="card-linking-container">
+                <div class="card-form-section">
+                    <h2 class="section-title">Link Payment Method</h2>
+                    <p class="section-subtitle">Securely connect your card to start using VaultWise</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <div class="payment-method-icon">
+                                <i class="fab fa-cc-visa"></i>
+                            </div>
+                            <div class="payment-method-name">Card</div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <div class="payment-method-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="payment-method-name">Bank</div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <div class="payment-method-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <div class="payment-method-name">PayPal</div>
+                        </div>
+                    </div>
+                    
+                    <form id="cardForm">
+                        <div class="form-group">
+                            <label class="form-label">Cardholder Name</label>
+                            <input type="text" class="form-input" placeholder="John Doe" id="cardName">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Card Number</label>
+                            <input type="text" class="form-input" placeholder="1234 5678 9012 3456" id="cardNumber" maxlength="19">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Expiration Date</label>
+                                <input type="text" class="form-input" placeholder="MM/YY" id="cardExpiry">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">CVV</label>
+                                <input type="text" class="form-input" placeholder="123" id="cardCvv" maxlength="3">
+                            </div>
+                        </div>
+                        
+                        <div class="security-info">
+                            <div class="security-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="security-text">
+                                Your card details are encrypted and securely stored. We never share your financial information with third parties.
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary pulse" id="linkCardBtn">
+                            <i class="fas fa-lock"></i> Securely Link Card
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="card-preview">
+                    <div class="card-visual" id="cardVisual">
+                        <div class="card-front">
+                            <div class="card-chip"></div>
+                            <div class="card-number" id="previewCardNumber">#### #### #### ####</div>
+                            <div class="card-details">
+                                <div class="card-holder" id="previewCardName">CARDHOLDER NAME</div>
+                                <div class="card-expiry" id="previewCardExpiry">MM/YY</div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-strip"></div>
+                            <div class="card-cvv" id="previewCardCvv">***</div>
+                        </div>
+                    </div>
+                    <button class="flip-button" id="flipCardBtn">
+                        <i class="fas fa-sync"></i> Flip Card
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>VaultWise</h3>
+                    <p style="color: var(--gray); margin-bottom: 20px;">
+                        AI-powered financial planning for the modern world.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Budgeting</a></li>
+                        <li><a href="#">Investment</a></li>
+                        <li><a href="#">Card Linking</a></li>
+                        <li><a href="#">AI Insights</a></li>
+                        <li><a href="#">Premium Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>2023 VaultWise Financial Technologies Inc.</div>
+                <div>
+                    <span>FDIC Insured • PCI DSS Compliant</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/card.js"></script>
+</body>
+</html>

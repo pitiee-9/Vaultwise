@@ -7,78 +7,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
 </head>
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <div class="sidebar-header">
-            <a href="#" class="logo">
-                <i class="fas fa-chart-line logo-icon"></i>
-                <span class="logo-text">Vaultwise</span>
-            </a>
-            <button class="toggle-btn" id="sidebar-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-        <button class="premium-btn">
-            <svg class="icon" viewBox="0 0 24 24" fill="#ffd700" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L14.09 8.26L20.91 8.91L15.45 12.9L17.36 19.64L12 16.2L6.64 19.64L8.55 12.9L3.09 8.91L9.91 8.26L12 2Z"/>
-            </svg>
-            Explore Premium
-        </button>
-        
-        <div class="sidebar-menu">
-            <a href="#" class="menu-item active">
-                <i class="fas fa-home menu-icon"></i>
-                <span class="menu-text">Dashboard</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-exchange-alt menu-icon"></i>
-                <span class="menu-text">Buy & Sell</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-code menu-icon"></i>
-                <span class="menu-text">Development</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-briefcase menu-icon"></i>
-                <span class="menu-text">Work</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-chart-pie menu-icon"></i>
-                <span class="menu-text">Portfolio</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-book menu-icon"></i>
-                <span class="menu-text">Docs</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-wallet menu-icon"></i>
-                <span class="menu-text">Budgeting</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-file-invoice-dollar menu-icon"></i>
-                <span class="menu-text">Transactions</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-robot menu-icon"></i>
-                <span class="menu-text">AI Insights</span>
-            </a>
-            
-            <a href="#" class="menu-item">
-                <i class="fas fa-cog menu-icon"></i>
-                <span class="menu-text">Settings</span>
-            </a>
-        </div>
+        <aside class="sidebar">
+            <div class="left">
+              <img src="logo.svg" />
+              <button>
+                <i class="ai-home-alt1"></i>
+              </button>
+              <button>
+                <i class="ai-heart"></i>
+              </button>
+              <button>
+                <i class="ai-mention"></i>
+              </button>
+      
+              <button>
+                <i class="ai-chat-dots"></i>
+              </button>
+              <button>
+                <i class="ai-plus"></i>
+              </button>
+              <div>
+                <button>
+                  <i class="ai-gear"></i>
+                </button>
+                <button>
+                  <i class="ai-link-out"></i>
+                </button>
+              </div>
+            </div>
+            <div class="right">
+              <div class="right-inner">
+                <div class="header">
+                  <div>
+                    <h2>Untitled UI</h2>
+                    <h3>store.untitledui.com</h3>
+                  </div>
+                  <i class="ai-chevron-vertical"></i>
+                </div>
+                <nav>
+                  <button>
+                    <i class="ai-dashboard"></i>
+                    <span>Dashboard</span>
+                  </button>
+                  <button>
+                    <i class="ai-shipping-box-v1"></i>
+                    <span>Products</span>
+                  </button>
+                  <button>
+                    <i class="ai-person"></i>
+                    <span>Customers</span>
+                  </button>
+                  <button>
+                    <i class="ai-open-envelope"></i>
+                    <span>Messages</span>
+                    <i class="ai-plus"></i>
+                  </button>
+                  <ul class="submenu">
+                    <li>
+                      Drafts
+                      <span class="badge"> 10 </span>
+                    </li>
+                    <li>
+                      Scheduled
+                      <span class="badge"> 4 </span>
+                    </li>
+                    <li>
+                      Published
+                      <span class="badge"> 20 </span>
+                    </li>
+                  </ul>
+                  <button>
+                    <i class="ai-image"></i>
+                    <span>Images</span>
+                  </button>
+                  <button>
+                    <i class="ai-network"></i>
+                    <span>Network</span>
+                  </button>
+                  <button>
+                    <i class="ai-data"></i>
+                    <span>Inventory</span>
+                  </button>
+                  <button>
+                    <i class="ai-hashtag"></i>
+                    <span>Hashtags</span>
+                  </button>
+                  <button>
+                    <i class="ai-trophy"></i>
+                    <span>Rewards</span>
+                  </button>
+                </nav>
+              </div>
+            </div>
+        </aside>
     </div>
 
     <!-- Main Content -->
