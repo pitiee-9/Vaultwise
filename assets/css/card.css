@@ -6,6 +6,7 @@
             --light: #f1f5f9;
             --gray: #64748b;
             --success: #10b981;
+            --error: #ef4444;
             --dark-bg: #0a0f1d;
             --card-bg: rgba(30, 41, 59, 0.5);
             --border: rgba(255, 255, 255, 0.1);
@@ -227,17 +228,10 @@
         /* Main Content */
         .main-content {
             flex: 1;
-            margin-left: 128px;
-            transition: 0.4s;
+            margin-left: 260px;
             min-height: 100vh;
-        }
-
-        .sidebar:hover ~ .main-content {
-                margin-left: 348px;
-        }
-        
-        .sidebar.collapsed ~ .main-content {
-            margin-left: var(--sidebar-collapsed);
+            display: flex;
+            flex-direction: column;
         }
         
         /* Header Styles */
@@ -830,4 +824,46 @@
             background: #002b6e;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
+        }
+        
+        /* Flutterwave Integration */
+        .flutterwave-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .flutterwave-logo {
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Status Messages */
+        .status-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .status-success {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--success);
+        }
+        
+        .status-error {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--error);
+        }
+        
+        .status-processing {
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: var(--primary);
         }

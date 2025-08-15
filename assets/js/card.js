@@ -1,4 +1,9 @@
-// Payment method switching
+// Replace with your actual Flutterwave API keys
+        const FLUTTERWAVE_PUBLIC_KEY = "FLWPUBK_TEST-XXXXXXXXXXXXXXXXXXXXXX";
+        const FLUTTERWAVE_SECRET_KEY = "FLWSECK_TEST-XXXXXXXXXXXXXXXXXXXXXX";
+        const FLUTTERWAVE_ENCRYPTION_KEY = "XXXXXXXXXXXXXXXXXXXXXXXX";
+        
+        // Payment method switching
         const paymentMethods = document.querySelectorAll('.payment-method');
         const formSections = {
             card: document.getElementById('cardFormSection'),
@@ -132,33 +137,55 @@
             });
         });
         
-        // Link Card Button
+        // Link Card Button with Flutterwave Integration
         document.getElementById('linkCardBtn').addEventListener('click', function() {
             const cardName = document.getElementById('cardName').value;
             const cardNumber = document.getElementById('cardNumber').value.replace(/\s/g, '');
             const cardExpiry = document.getElementById('cardExpiry').value;
             const cardCvv = document.getElementById('cardCvv').value;
+            const statusElement = document.getElementById('cardStatus');
             
+            // Basic validation
             if (!cardName || !cardNumber || cardNumber.length < 16 || !cardExpiry || !cardCvv) {
-                alert('Please fill all card details correctly');
+                showStatus(statusElement, 'Please fill all card details correctly', 'error');
                 return;
             }
             
-            // Show success message
+            // Show processing status
+            showStatus(statusElement, 'Verifying card with Flutterwave...', 'processing');
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            this.disabled = true;
             
+            // Simulate Flutterwave API call (in a real app, this would be a server-side call)
             setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> Card Linked Successfully!';
-                this.classList.remove('pulse');
-                this.style.background = 'var(--success)';
-                this.style.borderColor = 'var(--success)';
+                // Simulate API response (success in this case)
+                const isSuccess = Math.random() > 0.2; // 80% success rate for demo
                 
-                // Redirect after 2 seconds
-                setTimeout(() => {
-                    window.location.href = 'dashboard.html';
-                }, 2000);
-            }, 1500);
+                if (isSuccess) {
+                    showStatus(statusElement, 'Card successfully verified with Flutterwave! Redirecting...', 'success');
+                    this.innerHTML = '<i class="fas fa-check"></i> Verified Successfully!';
+                    this.style.background = 'var(--success)';
+                    this.style.borderColor = 'var(--success)';
+                    
+                    // Redirect after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 2000);
+                } else {
+                    showStatus(statusElement, 'Card verification failed. Please check your details and try again.', 'error');
+                    this.innerHTML = '<i class="fas fa-lock"></i> Verify with Flutterwave';
+                    this.disabled = false;
+                }
+            }, 2000);
         });
+        
+        // Show status message
+        function showStatus(element, message, type) {
+            element.textContent = message;
+            element.className = 'status-message';
+            element.classList.add(`status-${type}`);
+            element.style.display = 'block';
+        }
         
         // Link Bank Button
         document.getElementById('linkBankBtn').addEventListener('click', function() {
